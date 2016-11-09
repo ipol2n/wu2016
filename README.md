@@ -1,46 +1,40 @@
 # ATDD using Robot Framework and TDD with Python
 
-## Install Python 3.4
+## Install Python 3.4.4
 https://www.python.org/downloads/
 
 Note:
 
-- For Windows, you have to remember Python installation path to use in the next step
+- For Windows, you have to add Python installation path to the Environment Variable in the next step
 
-### Setup PATH environment variable for Windows
-1. Press "Windows + Pause"
+### Setup PATH environment variable for Windows only
+1. Press "Windows + Pause" button
 2. Click "Advance System Settings"
 3. Click "Environment Variables"
 4. Edit value of `Path` variable, append Python installation path at the end
 
 ### Verify Installed Python
-1. Open terminal
+1. Open command prompt/terminal
 2. Run `python --version`
 ```bash
 python --version
-Python 3.5.1
+Python 3.4.4
 ```
 You should see the version of installed Python on your machine
 
 ## Install PIP
+
+### Windows
+```bash
+python -m pip install --upgrade pip
+python -m pip --version
+pip 9.0.1 from C:\Python34\lib\site-packages (python 3.4)
+```
+You should see the version of installed PIP on your machine
+
 ### Mac OS/Linux
 ```bash
 wget https://bootstrap.pypa.io/get-pip.py && sudo python get-pip.py
-```
-### Windows
-1. Goto "https://bootstrap.pypa.io/get-pip.py"
-
-2. Save this as "get-pip.py" at "c:\"
-
-3. Open terminal and run
-```bash
-python get-pip.py
-```
-
-### Verify installed PIP
-1. Open terminal
-2. Run `pip --version`
-```bash
 pip --version
 pip 8.1.2 from /env/lib/python3.5/site-packages (python 3.5)
 ```
@@ -48,6 +42,13 @@ You should see the version of installed PIP on your machine
 
 
 ## Install Virtualenv
+
+### Windows
+```bash
+python -m pip install virtualenv
+```
+
+### MacOS/Linux
 ```bash
 pip install virtualenv
 ```
@@ -58,18 +59,23 @@ pip install virtualenv
 
 2. Goto project directory and init Git repository
 
-3. Create our development environment
+3. Create our development environment and activate virtualenv
 
+Windows
+```bash
+python -m virtualenv env
+env\scripts\activate
+```
+
+MacOS/Linux
 ```bash
 virtualenv env
-```
-Activate env (Mac/Linux)
-```
 . env/bin/activate
 ```
-Activate env (Windows)
-```
-env\scripts\activate
+
+The result should be
+```bash
+Installing setuptools, pip, wheel...done
 ```
 
 ## Install dependencies
